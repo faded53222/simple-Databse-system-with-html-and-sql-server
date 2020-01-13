@@ -1,0 +1,15 @@
+{% block body %}
+<form name="U_I_E" method="post">
+  <p>LAZY club</p>
+  <p>personal information edit</p>
+  <p>ID: {{ID}}</p>
+  <p>name:<input type="text" name="name" value={{_name}}></p>
+  <p>college:<input type="text" name="college" value={{college}}></p>
+  <p>grade:<input type="text" name="grade" value={{grade}}></p>
+  <p>password: <input type="password" name="password1" value={{password}}></p>
+  <p>repeat password: <input type="password" name="password2" value={{password}}></p>
+  <p><input type="submit" value="SUBMIT" name="submit"></p>
+  <p><input type="submit" value="BACK" name="back"></p>
+  {{message}}
+</form>
+{% endblock %}

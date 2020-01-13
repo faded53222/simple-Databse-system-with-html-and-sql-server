@@ -1,0 +1,12 @@
+{% block body %}
+<form name="index" method="post">
+  <p>LAZY club</p>
+  <p>main menu</p>
+  <p>User: {{name}}</p>
+  <p><input type="submit" value="view personal information" name="VPI" /></p>
+  <p><input type="submit" value="search club" name="SC" /></p>
+   <p><input type="submit" value="my club" name="MC"/></p>
+   <p><input type="submit" value="exit" name="exit"/></p>
+  {{message}}
+</form>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% block body %}
+  <p>LAZY club</p>
+  <p>manage club</p>
+   <form name="manage_club"  method="post">
+ <p><input type="submit" value="BACK" name="back"></p>
+  
+<p>CLUB ID &nbsp &nbsp &nbsp &nbsp &nbsp CLUB NAME &nbsp &nbsp &nbsp &nbsp &nbsp CLUB DISCRIPTION </p>
+{% for i in av_list %}
+<p>Club:</p>
+<p>&nbsp &nbsp &nbsp {{(av_list[loop.index-1])[0]}}
+ &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+ {{(av_list[loop.index-1])[1]}}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  {{(av_list[loop.index-1])[2]}} </p>
+<p>Posts:</p>
+{% for each in post_list[loop.index-1] %}
+    <p>{{ each }}</p>
+{% endfor %}
+<p>new Post:<input type="text" name={{av_list[loop.index-1][0]|string+"PT"}} ></p>
+<p><input type="submit" value="post" name={{(av_list[loop.index-1])[0]|string+"P"}} ></p>
+{% set AA = loop.index-1 %}
+<p>Club members:</p>
+{% for each2 in club_member_list[loop.index-1] %}
+  <p>name: {{each2[0]}}</p>
+{% endfor %}
+
+
+<p>requests:</p>
+{% for each2 in request_list[loop.index-1] %}
+  <p>name: {{each2[0]}} <input type="submit" value="Agree" name={{(av_list[AA])[0]|string+"I"+each2[1]|string+"A"}} > <input type="submit" value="Reject" name={{(av_list[AA])[0]|string+"I"+each2[1]|string+"R"}}  ></p>
+{% endfor %}
+
+{% endfor %}
+</form>
+{% endblock %}

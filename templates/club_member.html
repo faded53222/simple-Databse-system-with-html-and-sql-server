@@ -1,0 +1,25 @@
+{% block body %}
+  <p>LAZY club</p>
+  <p>as club member</p>
+  <form name="club_member"  method="post">
+  <p><input type="submit" value="BACK" name="back"></p>
+  
+  
+<p>CLUB ID &nbsp &nbsp &nbsp &nbsp &nbsp CLUB NAME &nbsp &nbsp &nbsp &nbsp &nbsp CLUB DISCRIPTION </p>
+{% for i in av_list %}
+<p>Club:</p>
+<p>&nbsp &nbsp &nbsp {{(av_list[loop.index-1])[0]}}
+ &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+ {{(av_list[loop.index-1])[1]}}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  {{(av_list[loop.index-1])[2]}} </p>
+<p>Posts:</p>
+{% for each in post_list[loop.index-1] %}
+    <p>{{ each }}</p>
+{% endfor %}
+<p>Club members:</p>
+{% for each2 in club_member_list[loop.index-1] %}
+  <p>name: {{each2[0]}}</p>
+{% endfor %}
+{% endfor %}
+</form>
+{% endblock %}

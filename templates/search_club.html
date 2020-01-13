@@ -1,0 +1,23 @@
+{% block body %}
+  <p>LAZY club</p>
+  <p>search club</p>
+  <p>you don't have to provide all information,if you don't provide any,you would get all clubs</p>
+  <form name="search_club"  method="post">
+  <p>ID:<input type="text" name="ID" /></p>
+  <p>name:<input type="text" name="name"/></p>
+  <p>part of the name is OK</p>
+  <p><input type="submit" value="search" name="search"></p>
+  <p><input type="submit" value="BACK" name="back"></p>
+  <p>CLUB ID &nbsp &nbsp &nbsp &nbsp &nbsp CLUB NAME &nbsp &nbsp &nbsp &nbsp &nbsp CLUB DISCRIPTION &nbsp &nbsp &nbsp &nbsp &nbsp founder </p>
+{% for i in av_list %}
+<p>&nbsp &nbsp &nbsp {{(av_list[loop.index-1])[0]}} &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp {{(av_list[loop.index-1])[1]}}&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{(av_list[loop.index-1])[2]}} &nbsp &nbsp &nbsp &nbsp &nbsp {{(av_list[loop.index-1])[3]}}
+ &nbsp &nbsp &nbsp &nbsp &nbsp 
+ 
+ <input type="submit" value={{in_list[loop.index-1]}} name={{(av_list[loop.index-1])[0]}}
+ {% if in_list[loop.index-1]!='JOIN'  %}
+ disabled
+ {% endif %}
+ ></p>
+{% endfor %}
+</form>
+{% endblock %}

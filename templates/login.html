@@ -1,0 +1,10 @@
+{% block body %}
+<form name="login" method="post">
+  <p>Welcome to use LAZY club system!</p>
+  <p>ID:<input type="text" name="ID" /></p>
+  <p>password: <input type="password" name="password" /></p>
+  <p><input type="submit" value="Log in" name="login"/></p>
+  <p><input type="submit" value="Sign up" name="signup"/></p>
+  {{message}}
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% block body %}
+<form name="signup"  method="post">
+  <p>Sign up</p>
+  <p>ID:<input type="text" name="ID" /></p>
+  <p>name:<input type="text" name="name"/></p>
+  <p>college:<input type="text" name="college"/></p>
+  <p>grade:<input type="text" name="grade"/></p>
+  <p>password: <input type="password" name="password1" /></p>
+  <p>repeat password: <input type="password" name="password2" /></p>
+  <p><input type="submit" value="Confirmed" name="confirmed"/></p>
+  {{message}}
+</form>
+{% endblock %}
