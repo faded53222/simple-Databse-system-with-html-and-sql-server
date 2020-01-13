@@ -401,7 +401,6 @@ def user_info_edit(ID):
 	if request.method =='POST':
 		if 'submit' in request.form.keys():
 			message=""
-			ID=info[0]
 			name=request.form['name']
 			college=request.form['college']
 			grade=request.form['grade']
@@ -409,7 +408,7 @@ def user_info_edit(ID):
 			password2=request.form['password2']
 			if name=="" or college=="" or grade=="" or password1=="" or password2=="":
 				message="Error: Unfilled blanks"
-				return render_template('user_information_edit.html',ID=info[0],_name=info[1],college=info[2],grade=info[3],message=message)
+				return render_template('user_information_edit.html',ID=ID,_name=info[1],college=info[2],grade=info[3],message=message)
 			if password1!=password2:
 				message='Error: Password dont match'
 			if message=="":
@@ -421,7 +420,7 @@ def user_info_edit(ID):
 				DBA.ExecNonQuery(A)
 				return redirect(url_for('user_info',ID=ID))
 			else:
-				return render_template('user_information_edit.html',ID=info[0],_name=info[1],college=info[2],grade=info[3],password=info[4],message=message)
+				return render_template('user_information_edit.html',ID=ID,_name=info[1],college=info[2],grade=info[3],password=info[4],message=message)
 		if 'back' in request.form.keys():
 			return redirect(url_for('user_info',ID=ID))
 @app.route('/signup', methods=['POST', 'GET'])
